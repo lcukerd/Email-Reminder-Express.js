@@ -46,7 +46,7 @@ module.exports.startup = () => {
   d.setMinutes(0);
   console.log("Today is " + day);
   if (day !== 5) {
-    d.setDate(d.getDate() + Math.floor(day / 5) * 6 + (day % 5));
+    d.setDate(d.getDate() + (11-day)%6);
     setTimeout(startCycle, d.getMilliseconds() - new Date().getTime());
   } else {
     startCycle();
